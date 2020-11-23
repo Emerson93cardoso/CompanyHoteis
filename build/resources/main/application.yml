@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+services:
+  hotel:
+    host: http://localhost:9090
+    salvar: ${services.hotel.host}/hotel
+    listar: ${services.hotel.host}/hotel/listar
+    detalhes: ${services.hotel.host}/hotel/%s
+    endereco: ${services.hotel.host}/hotel/endereco
+    listarByIdEnderecos: ${services.hotel.host}/hotel/%s/enderecos
+    getEndereco: ${services.hotel.host}/hotel/%s/get-endereco
+    updateEndereco: ${services.hotel.host}/hotel/editar-endereco
+
+
+
+
+
+

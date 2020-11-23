@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Lista Hoteis</title>
+    </head>
+    <body>
+        <h1> Hoteis </h1>
+        <table border="2">
+            <tr>
+                <th>ID</th>
+                <th>NOME</th>
+                <th>EMAIL</th>
+                <th>TELONE</th>
+            </tr>
+            <tr th:each="hotel: ${listaHoteis}">
+                <td th:text="${hotel.id}" />
+                <td th:text="${hotel.nome}" />
+                <td th:text="${hotel.email}" />
+                <td th:text="${hotel.telefone}" />
+                <td>
+
+                    <a th:href="${'/hotel/' + hotel.id + '/detalhes' }"> Detalhes </a>
+                </td>
+            </tr>
+        </table>
+
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Cadastro de endereço </title>
+    </head>
+    <body>
+        <h1> Cadastrado de endereço </h1>
+        <br>
+        <form method="post" action="/hotel/cadastrar/endereco" th:object="${endereco}">
+            <input type="hidden" name="idHotel" th:value="${id_hotel}"/>
+            <p> Logradouro: </p>
+            <input type="text" name="logradouro" th:field="*{logradouro}"/>
+            <span th:if="${#fields.hasErrors('logradouro')}" th:errors="*{logradouro}"> </span>
+            <p> Numero: </p>
+            <input type="text" name="numero" th:field="*{numero}"/>
+            <p> Complemento </p>
+            <input type="text" name="complemento" th:field="*{complemento}"/>
+            <span th:if="${#fields.hasErrors('complemento')}" th:errors="*{complemento}"> </span>
+            <p> Estado </p>
+            <input type="text" name="estado" th:field="*{estado}"/>
+            <span th:if="${#fields.hasErrors('estado')}" th:errors="*{estado}"> </span>
+            <p> uf </p>
+            <input type="text" name="uf" th:field="*{uf}"/>
+            <span th:if="${#fields.hasErrors('uf')}" th:errors="*{uf}"> </span>
+            <p> Cep: </p>
+            <input type="text" name="cep" th:field="*{cep}"/>
+            <span th:if="${#fields.hasErrors('cep')}" th:errors="*{cep}"> </span>
+            <br> <br>
+            <button type="submit"> Cadastrar </button>
+        </form>
+
+    </body>
+</html>
